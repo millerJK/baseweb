@@ -1,6 +1,2 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<body>
-<h2><a href="/hello.json">点击</a></h2>
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<jsp:forward page="WEB-INF/menu/index.jsp"/>
