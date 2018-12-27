@@ -31,7 +31,7 @@
            同时不用写Dao的实现类了
      -->
      <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-          <property name="basePackage" value="com.base.electric.dao"></property>
+          <property name="basePackage" value="com.base.electric.dao.db"></property>
           <property name="sqlSessionFactoryBeanName"  value="sqlSessionFactory"></property>
      </bean>
 

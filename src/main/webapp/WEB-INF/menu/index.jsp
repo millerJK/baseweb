@@ -19,7 +19,7 @@ function check(){
 			return false;
 	    }
 	theForm.submit();
-	return true; 
+	return true;
 }
 function checkNumberImage(){
 	var imageNumber = document.getElementById("imageNumber");
@@ -33,12 +33,12 @@ function checkFunction(){
 BODY { margin: 0px; }
 FORM {
 	MARGIN: 0px; BACKGROUND-COLOR: #ffffff
-} 
+}
 </STYLE>
 <title>国家电力监测中心</title>
 </head>
 <body onload="ini()">
-<form action="${pageContext.request.contextPath}/menu/home.jsp" method="post" target="_top">
+<form action="/userCenter/doLogin.json" method="post" target="_top">
 <table border="0" width="100%" id="table1" height="532" cellspacing="0" cellpadding="0" >
 	<tr>
 		<td>　</td>
@@ -61,14 +61,14 @@ FORM {
 								<tr>
 									<td width="100"><img border="0" src="${pageContext.request.contextPath}/images/yonghu.jpg" width="75" height="20"></td>
 									<td><input type="text" name="name" style="width: 125 px" size="20" value=""  maxlength="25"></td>
-	
+
 								</tr>
 								<tr>
 									<td width="100"><img border="0" src="${pageContext.request.contextPath}/images/mima.jpg" width="75" height="20"></td>
 									<td><input type="password" name="password" style="width: 125 px" size="20" value=""  maxlength="25"></td>
-									
+
 								</tr>
-								<!-- 
+								<!--
 								<tr>
 									<td width="100"><img border="0" src="${pageContext.request.contextPath}/images/check.jpg" width="75" height="20"></td>
 									<td>
@@ -99,7 +99,7 @@ FORM {
 							</table>
 						</td>
 					</tr>
-					
+
 					</table>
 				</td>
 				<td width=13%></td>

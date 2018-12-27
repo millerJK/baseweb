@@ -1,5 +1,6 @@
 package com.base.electric.dao.cache;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -15,27 +16,37 @@ public abstract class CommonCache {
      * @param value
      * @param keyOps
      */
-    public void saveOneData(Object value, String... keyOps) {
+    void saveOneData(Object value, String... keyOps) {
         if (value == null)
             return;
 
         redisTemplate.opsForValue().set(genKey(keyOps), value);
     }
 
+    /**
+     * 查询数据
+     *
+     * @param keyOps
+     * @return
+     */
+    Object getOneData(String... keyOps) {
 
-    public Object getOneData(String... keyOps) {
-
-        return redisTemplate.opsForValue().get(getOneData(keyOps));
+        return redisTemplate.opsForValue().get(genKey(keyOps));
     }
 
 
-    public <T> T getOneData(Class<T> tClass, String... keyOps) {
+    <T> T getOneData(Class<T> tClass, String... keyOps) {
         Object oneData = getOneData(keyOps);
         if (oneData == null)
             return null;
 
+        return JSON.parseObject(oneData.toString(), tClass);
     }
 
+
+    public void deleteOneData(String... keyOps) {
+        redisTemplate.opsForValue().getOperations().delete(genKey(keyOps));
+    }
 
     /**
      * 生成key的规则
